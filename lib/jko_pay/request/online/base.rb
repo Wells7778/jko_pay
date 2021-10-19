@@ -42,7 +42,9 @@ module JkoPay
 
         def send_request path
           raise JkoPay::Error, "Api host url is not presence" unless request_host.present?
-          raise JkoPay::Error, "Missing Merchant Key" unless config.merchant_key.present?
+          raise JkoPay::Error, "Missing Merchant ID" unless config.merchant_id.present?
+          raise JkoPay::Error, "Missing API Key" unless config.merchant_key.present?
+          raise JkoPay::Error, "Missing Secret Key" unless config.merchant_secret.present?
           params = {
             store_id: @config.merchant_id,
             **to_hash,

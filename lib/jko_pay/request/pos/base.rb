@@ -66,6 +66,7 @@ module JkoPay
 
         def send_request path
           raise JkoPay::Error, "Api host url is not presence" unless request_host.present?
+          raise JkoPay::Error, "Missing Merchant ID" unless config.merchant_id.present?
           raise JkoPay::Error, "Missing Merchant Key" unless config.merchant_key.present?
           body = sign_params
           @request_raw = JSON.dump(body.sort.to_h)
