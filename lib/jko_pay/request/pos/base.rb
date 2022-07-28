@@ -39,6 +39,8 @@ module JkoPay
         def request
           res = send_request request_action
           @response_raw = res.body
+          raise Error, "status: #{res.status}, message: #{res.body}" if res.status != 200
+
           response_klass.new(JSON.parse(res.body), res)
         end
 
