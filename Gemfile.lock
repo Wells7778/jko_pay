@@ -1,12 +1,18 @@
 PATH
   remote: .
   specs:
-    jko_pay (0.1.9)
+    jko_pay (0.2.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.4.4)
+    faraday (2.9.2)
+      faraday-net_http (>= 2.0, < 3.2)
+    faraday-net_http (3.1.0)
+      net-http
+    net-http (0.4.1)
+      uri
     rake (12.3.2)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
@@ -21,11 +27,13 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
+    uri (0.13.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  faraday
   jko_pay!
   rake (~> 12.0)
   rspec (~> 3.0)
